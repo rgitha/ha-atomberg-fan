@@ -1,0 +1,46 @@
+rules:
+  # Bronze
+  action-setup:
+    status: exempt
+    comment: The integration has no actions of its own.
+  appropriate-polling:
+    status: done
+    comment: >
+      The fan is read at an advertisement when the last read is over a minute old,
+      after each command, and its own state reports are followed while connected.
+  brands: todo
+  common-modules: done
+  config-flow-test-coverage: done
+  config-flow: done
+  dependency-transparency: todo
+  docs-actions:
+    status: exempt
+    comment: The integration has no actions of its own.
+  docs-high-level-description: done
+  docs-installation-instructions: done
+  docs-removal-instructions: done
+  entity-event-setup: done
+  entity-unique-id: done
+  has-entity-name: done
+  runtime-data: done
+  test-before-configure: done
+  test-before-setup:
+    status: exempt
+    comment: >
+      The fan is often briefly out of range. Setup succeeds once it is heard,
+      and its entities are unavailable until it is read.
+  unique-config-entry: done
+
+  # Silver
+  action-exceptions: done
+  config-entry-unloading: done
+  docs-configuration-parameters: done
+  docs-installation-parameters: done
+  entity-unavailable: done
+  integration-owner: done
+  log-when-unavailable: done
+  parallel-updates: done
+  reauthentication-flow:
+    status: exempt
+    comment: The fan has no account or credentials.
+  test-coverage: todo

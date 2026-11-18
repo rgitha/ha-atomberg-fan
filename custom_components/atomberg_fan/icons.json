@@ -1,0 +1,59 @@
+{
+  "entity": {
+    "fan": {
+      "fan": {
+        "default": "mdi:ceiling-fan",
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "boost": "mdi:fan-plus"
+            }
+          }
+        }
+      }
+    },
+    "switch": {
+      "sleep": {
+        "default": "mdi:sleep"
+      }
+    },
+    "select": {
+      "timer": {
+        "default": "mdi:timer-outline"
+      }
+    },
+    "button": {
+      "update_status": {
+        "default": "mdi:refresh"
+      }
+    },
+    "sensor": {
+      "motor_speed": {
+        "default": "mdi:speedometer"
+      },
+      "runtime": {
+        "default": "mdi:timer-sand"
+      },
+      "restarts": {
+        "default": "mdi:restart"
+      },
+      "updated_last": {
+        "default": "mdi:clock-outline"
+      }
+    },
+    "binary_sensor": {
+      "wifi_configured": {
+        "default": "mdi:wifi-off",
+        "state": {
+          "on": "mdi:wifi"
+        }
+      },
+      "connection_link": {
+        "default": "mdi:bluetooth",
+        "state": {
+          "on": "mdi:bluetooth-connect"
+        }
+      }
+    }
+  }
+}

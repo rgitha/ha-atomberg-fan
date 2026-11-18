@@ -1,0 +1,132 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "confirm": {
+        "title": "Set up {name}",
+        "description": "Set up the fan at {address}? Home Assistant will connect to check that it responds.\n\n**Connect when needed:** connects only to send a command or check the fan. Changes made with the remote show within about a minute.\n\n**Stay connected:** changes made with the remote show at once, but it uses one Bluetooth connection slot all the time (most proxies have three).\n\nYou can change this later under Configure.\n\nNot sure which fan this is? Blink its LEDs to find it.{note}",
+        "menu_options": {
+          "identify": "Blink its LEDs",
+          "setup_on_demand": "Set up: connect when needed",
+          "setup_persistent": "Set up: stay connected"
+        }
+      },
+      "user": {
+        "description": "Choose a fan in range, or enter its Bluetooth address.",
+        "data": {
+          "address": "Fan"
+        }
+      },
+      "manual": {
+        "description": "Enter the fan's Bluetooth address, e.g. 34:CD:B0:C8:CD:26. The fan must be within range of a Bluetooth adapter or proxy.",
+        "data": {
+          "address": "Bluetooth address"
+        }
+      }
+    },
+    "error": {
+      "not_found": "No fan with this address is in range.",
+      "invalid_address": "Enter an address like 34:CD:B0:C8:CD:26."
+    },
+    "abort": {
+      "already_configured": "This fan is already added.",
+      "already_in_progress": "This fan is already being added.",
+      "not_supported": "This device isn't a supported fan."
+    },
+    "progress": {
+      "identifying": "Blinking its LEDs…"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "persistent": "Stay connected"
+        },
+        "data_description": {
+          "persistent": "Changes made with the remote show at once, but it uses one Bluetooth connection slot all the time (most proxies have three). When off, it connects only to send a command or check the fan, and changes made with the remote show within about a minute."
+        }
+      }
+    }
+  },
+  "entity": {
+    "fan": {
+      "fan": {
+        "state_attributes": {
+          "preset_mode": {
+            "state": {
+              "boost": "Boost"
+            }
+          }
+        }
+      }
+    },
+    "light": {
+      "led": {
+        "name": "LED"
+      }
+    },
+    "switch": {
+      "sleep": {
+        "name": "Sleep mode"
+      }
+    },
+    "select": {
+      "timer": {
+        "name": "Timer",
+        "state": {
+          "off": "Off",
+          "1h": "1 hour",
+          "2h": "2 hours",
+          "3h": "3 hours",
+          "6h": "6 hours"
+        }
+      }
+    },
+    "sensor": {
+      "updated_last": {
+        "name": "Updated last"
+      },
+      "motor_speed": {
+        "name": "Motor speed"
+      },
+      "board_temperature": {
+        "name": "Board temperature"
+      },
+      "runtime": {
+        "name": "Runtime"
+      },
+      "restarts": {
+        "name": "Restarts"
+      }
+    },
+    "button": {
+      "update_status": {
+        "name": "Update status"
+      }
+    },
+    "binary_sensor": {
+      "wifi_configured": {
+        "name": "Wi-Fi configured"
+      },
+      "connection_link": {
+        "name": "Connection link",
+        "state": {
+          "on": "Active",
+          "off": "Idle"
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "cannot_connect": {
+      "message": "Couldn't reach the fan."
+    },
+    "device_busy": {
+      "message": "The fan is busy with another command. Try again."
+    },
+    "not_found": {
+      "message": "The fan ({address}) isn't in range of a Bluetooth adapter or proxy."
+    }
+  }
+}
